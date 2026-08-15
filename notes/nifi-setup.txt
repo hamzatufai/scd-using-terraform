@@ -1,0 +1,11 @@
+- create a processor group pg-scd-snowflake-qh and
+- then create following processor by connecting on SUCCESS criteria
+    - ListFile (Input Directory = /opt/workspace/nifi/data)
+    - FetchFile
+    - PutS3Object (bucket=s3-scd-snowflake-us-west-2-tf, access, secretkeys)
+
+In case of nifi errors/issues in the container, change to one of the following nifi image versions in docker-compose.yml file:
+
+1) apache/nifi:1.14.0
+2) apache/nifi:1.12.0
+3) pavansrivathsa/nifi
