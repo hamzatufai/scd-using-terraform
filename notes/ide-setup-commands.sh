@@ -7,13 +7,12 @@ ssh -i "ec2-scd-snowflake-us-west-2-tf.pem" ec2-user@<EC2_PUBLIC_DNS> -L 2080:lo
 # Installing docker and docker-compose on the EC2 instance
 sudo yum update -y
 sudo yum install docker -y
+sudo systemctl start docker
+sudo systemctl enable docker
 sudo yum install -y libxcrypt-compat
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo gpasswd -a $USER docker
-newgrp docker
-sudo systemctl start docker
-sudo systemctl enable docker
 
 # Commands to run the docker containers and access the UIs
 docker --version
