@@ -233,3 +233,5 @@ terraform destroy --auto-approve
 - SCD Type-1 and Type-2 implementation in Snowflake
 - Apache NiFi for automated file-to-S3 data movement
 - Docker for portable service deployment on EC2
+=======
+# slowly-changing-dimensions-with-snowflake
