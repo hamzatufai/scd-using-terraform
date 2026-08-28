@@ -42,4 +42,4 @@ create or replace table customer_raw (
      state varchar,
      country varchar);
      
-create or replace stream customer_table_changes on table customer;
+create or replace stream customer_table_changes on table customer; -- change data capture -- cdc 
